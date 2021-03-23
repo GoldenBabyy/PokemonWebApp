@@ -89,3 +89,8 @@ h5 {
     margin-top: 16px;
     float: right;
 }
+
+.loadmore:hover {
+    background-color: #d7ffbd;
+    color: var(--textGreen);
+}

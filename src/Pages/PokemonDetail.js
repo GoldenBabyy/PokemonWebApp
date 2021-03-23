@@ -20,7 +20,17 @@ export const PokemonDetail = (props) => {
         if(rand > 50){
             setIsShow(true);
         }else{
-            swal("OH NO!", catchedPokemonName+" Got Away... Let's Try Again!", "error");
+            swal("OH NO!", catchedPokemonName+" Got Away... Let's Try Again!", "error", {
+                button: {
+                    text: "Try Again",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-success btn-alert",
+                    closeModal: true
+                },
+                closeOnClickOutside: false,
+                closeOnEsc: false,
+            });
         }
     };
 

@@ -69,6 +69,11 @@ span.nickname {
     width: fit-content;
 }
 
+.back:hover {
+    background-color: #d7ffbd;
+    color: var(--textGreen);
+}
+
 .alert {
     display: block;
     margin-top: 100px;

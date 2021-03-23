@@ -59,10 +59,24 @@ export const PokemonModal = (props) => {
                 localStorage.setItem('myPokemon', JSON.stringify(myPokemonData));
             }  
             props.onHide(false)
-            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname + "!", "success");
+            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname + "!", "success", 
+            {
+                buttons: false,
+                timer: 2500
+            });
             setNickname('');
         }else{
-            swal("WARNING!", "The nickname cannot be empty or the nickname has been used...Please enter the nickname again!", "warning");
+            swal("WARNING!", "The nickname cannot be empty or the nickname has been used...Please enter the nickname again!", "warning", {
+                button: {
+                    text: "OK",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-success btn-alert",
+                    closeModal: true
+                },
+                closeOnClickOutside: false,
+                closeOnEsc: false,
+            });
         }
     }
 
@@ -72,6 +86,8 @@ export const PokemonModal = (props) => {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+            backdrop="static"
+            size="ml"
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter" className="modalTitle">
@@ -83,7 +99,7 @@ export const PokemonModal = (props) => {
                     <label className="m-0">Nickname</label>
                     <p className="subtitle-modal">Enter the nickname and click "Add to My Pokemon List" button to save the captured Pokemon </p>
                     <input type='text' className="form-control" name='nickname' placeholder={props.catchedpokemonname + "'s Nickname"} value={nickname} onChange={handleChange} required></input>
-                    <button type='submit' className="btn btn-primary btnAdd" onClick={() => handleSubmit()}>Add to My Pokemon List</button>
+                    <button type='submit' className="btn btn-success btnAdd" onClick={() => handleSubmit()}>Add to My Pokemon List</button>
                 </div>
             </Modal.Body>
         </Modal>

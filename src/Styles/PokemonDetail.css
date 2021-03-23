@@ -161,9 +161,20 @@
     margin-bottom: 16px;
 }
 
+.btn-alert:hover,
+.btn-alert:active {
+    background: var(--textGreen) !important;
+    opacity: 0.5;
+}
+
 .btnAdd {
     margin-top: 10px;
     float: right;
+}
+
+.btnAdd:hover {
+    background-color: #d7ffbd;
+    color: var(--textGreen);
 }
 
 .btnBack {

@@ -20,15 +20,32 @@ export const MyPokemonList = () => {
             icon: "warning",
             buttons: true,
             dangerMode: true,
+            closeOnClickOutside: false,
+            closeOnEsc: false,
         })
         .then((willRelease) => {
         if (willRelease) {
             release(nicknamePokemon, id);
             swal("Poof! Your pokemon named " + nicknamePokemon + " has been released!", {
-            icon: "success",
+                icon: "success", 
+                buttons: false,
+                timer: 2500,
+                closeOnClickOutside: false,
+                closeOnEsc: false,
             });
         } else {
-            swal("", "Your pokemon named " + nicknamePokemon + " is safe!", "info");
+            swal("", "Your pokemon named " + nicknamePokemon + " is safe!", "info", 
+            {
+                button: {
+                    text: "OK",
+                    value: true,
+                    visible: true,
+                    className: "btn btn-success btn-alert",
+                    closeModal: true
+                },
+                closeOnClickOutside: false,
+                closeOnEsc: false,
+            });
         }
         });
     }
