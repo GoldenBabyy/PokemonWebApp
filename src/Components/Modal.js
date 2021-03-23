@@ -18,7 +18,7 @@ export const PokemonModal = (props) => {
         {
             id: props.id,
             name: props.name,
-            nickName: [nickname],
+            nickName: [nickname.toLowerCase()],
             img: props.img
         }
 
@@ -28,7 +28,7 @@ export const PokemonModal = (props) => {
                     myPokemonData.forEach((myPokemon, index) => {
                         if(myPokemon.id === props.id){
                             myPokemon.nickName.forEach((pokemonNickname, index) => {
-                                if(pokemonNickname === nickname.toLowerCase()){
+                                if(pokemonNickname.toLowerCase() === nickname.toLowerCase()){
                                     validData = false;
                                     throw BreakException;
                                 }else{
@@ -53,13 +53,13 @@ export const PokemonModal = (props) => {
             }else{
                 myPokemonData.forEach((myPokemon, index) => {
                     if(myPokemon.id === props.id){
-                        myPokemon.nickName.push(nickname);
+                        myPokemon.nickName.push(nickname.toLowerCase());
                     }
                 });
                 localStorage.setItem('myPokemon', JSON.stringify(myPokemonData));
             }  
             props.onHide(false)
-            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname + "!", "success", 
+            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname[0].toUpperCase() + nickname.slice(1) + "!", "success", 
             {
                 buttons: false,
                 timer: 2500
