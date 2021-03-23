@@ -84,8 +84,8 @@ export const MyPokemonList = () => {
                                         <li key={nickname+id}>
                                             <img className="avatar" src={myPokemon.img} alt="imgPokemon"/>
                                             <span className="myPokemon">
-                                                <span className="nickname">{nickname[0].toUpperCase() + nickname.slice(1)}</span>
-                                                <span className="name">{myPokemon.name[0].toUpperCase() + myPokemon.name.slice(1)}</span>
+                                                <span className="nickname">{nickname[0].toUpperCase() + nickname.toLowerCase().slice(1)}</span>
+                                                <span className="name">{myPokemon.name[0].toUpperCase() + myPokemon.name.toLowerCase().slice(1)}</span>
                                             </span>
                                             <span className="delete">
                                                 <button type="button" className="close" aria-label="Close" onClick={() => confirm(nickname, myPokemon.id)}>

@@ -59,7 +59,7 @@ export const PokemonModal = (props) => {
                 localStorage.setItem('myPokemon', JSON.stringify(myPokemonData));
             }  
             props.onHide(false)
-            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname[0].toUpperCase() + nickname.slice(1) + "!", "success", 
+            swal("CONGRATULATIONS!", props.catchedpokemonname+" Caught and Named " + nickname[0].toUpperCase() + nickname.toLowerCase().slice(1) + "!", "success", 
             {
                 buttons: false,
                 timer: 2500
