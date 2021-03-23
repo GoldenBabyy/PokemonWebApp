@@ -36,26 +36,24 @@ export const PokemonList = () => {
     if (error) return <ErrorPage />;
 
     return (
-        <>
-            <div className='container col-md-11'>
-                <h1 className="title">CATCH ME!</h1>
-                <p className="subtitle">Let's choose me (Pokémon) and catch me!</p>
-                <div className='row'>
-                    {data.pokemons.length === 0 ? 
-                        ( 
-                            <p className="text-white center text-danger"> No Pokémon Available</p> 
-                        ) : ( 
-                            data.pokemons.results.map(
-                                (pokemon, id) => 
-                                    <Pokemon id={id} key={id} pokemonData={pokemon} myPokemonList={myPokemonList}/>
-                            )
+        <div className='container col-md-11'>
+            <h1 className="title">CATCH ME!</h1>
+            <p className="subtitle">Let's choose me (Pokémon) and catch me!</p>
+            <div className='row'>
+                {data.pokemons.length === 0 ? 
+                    ( 
+                        <p className="text-white center text-danger"> No Pokémon Available</p> 
+                    ) : ( 
+                        data.pokemons.results.map(
+                            (pokemon, id) => 
+                                <Pokemon id={id} key={id} pokemonData={pokemon} myPokemonList={myPokemonList}/>
                         )
-                    }
-                    <div className="col-md-12">
-                        <button className="btn btn-success loadmore" onClick={() => onLoadMore(limitPokemon+9)}> Load More... </button>
-                    </div>
+                    )
+                }
+                <div className="col-md-12">
+                    <button className="btn btn-success loadmore" onClick={() => onLoadMore(limitPokemon+9)}> Load More... </button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

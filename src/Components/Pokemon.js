@@ -32,27 +32,3 @@ export const Pokemon = ({pokemonData, myPokemonList}) => {
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // <div className='pokemon'>
-        //     <div className="pokemon__image">
-        //         <img src={pokemonData.image} alt={pokemonData.name} />
-        //     </div>
-        //     <div className="pokemon__name">
-        //         <strong>{pokemonData.name}</strong>
-        //     </div>
-        // </div>
-
-        
