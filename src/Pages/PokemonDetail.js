@@ -64,7 +64,7 @@ export const PokemonDetail = (props) => {
                                 img={props.location.state}
                             />
                         </div>
-                        <span class="how-to-play" data-tooltip="Try to click the catch button around pokemon to catch Pokémon" data-tooltip-position="bottom">How to catch ? </span>
+                        <span className="how-to-play" data-tooltip="Try to click the catch button around pokemon to catch Pokémon" data-tooltip-position="bottom">How to catch ? </span>
                     </div>
                 </div>
             </div>

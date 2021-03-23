@@ -123,19 +123,6 @@
 }
 
 
-/* Alert */
-
-.error-message::before {
-    display: none;
-}
-
-.error-message i {
-    margin: 0 .4em;
-    color: #f27474;
-    font-size: 1.4em;
-}
-
-
 /* Ability */
 
 .pokemonType {
