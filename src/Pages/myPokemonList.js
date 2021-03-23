@@ -67,13 +67,13 @@ export const MyPokemonList = () => {
     return(
         <div>
             <h1 className="title-pokemonlist">My Pokémon List!</h1>
-            <p className="subtitle">List of your Pokémon</p>
+            <p className="subtitle">List of your Pokémon(s)</p>
             {
                 myPokemonList.length === 0 ?
                     (
                         <>
                             <p className="text-center text-danger alert"> You don't have any Pokémon caught yet</p> 
-                            <p className="subtitle-alert">Click back to home button below to catch a Pokémon(s)</p>
+                            <p className="subtitle-alert">Click back to home button below to catch a Pokémon</p>
                         </>
                     ) : 
                     ( 
