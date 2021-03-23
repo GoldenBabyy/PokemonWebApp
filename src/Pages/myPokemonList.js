@@ -57,7 +57,7 @@ export const MyPokemonList = () => {
                     (
                         <>
                             <p className="text-center text-danger alert"> You don't have any Pokémon caught yet</p> 
-                            <p className="subtitle-alert">Let's choose me (Pokémon) and catch me!</p>
+                            <p className="subtitle-alert">Click back to home button below to catch a Pokémon</p>
                         </>
                     ) : 
                     ( 
