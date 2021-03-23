@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter} from "react-router-dom";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from "@apollo/react-hooks";
+import { Copyright } from './Components/Copyright';
+import { Routes } from './Routes/routes';
+import { Header } from './Components/Header';
 import './App.css';
 
 function App() {
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: 'https://graphql-pokeapi.vercel.app/api/graphql'
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <ApolloProvider client={client}>
+     <Header/>
+      <BrowserRouter>
+        <Routes />
+    </BrowserRouter>
+    <Copyright/>
+   </ApolloProvider>
   );
 }
 

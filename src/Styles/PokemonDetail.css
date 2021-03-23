@@ -1,0 +1,250 @@
+.border {
+    border: 10px solid black;
+}
+
+.imgPokemon {
+    width: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.pokemonName {
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    color: var(--textGreen);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px var(--textGreen) solid;
+}
+
+.description {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 6px 10px 0 rgba(3, 172, 40, 0.5);
+    transition: 0.3s
+}
+
+.animation {
+    position: relative;
+    margin-top: 20px;
+    animation-name: pokemonAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.btn-catch {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: 2px white solid;
+    transition: opacity .35s ease;
+}
+
+.btn-catch:focus {
+    outline: none;
+}
+
+.btn-catch:hover {
+    background-color: #d7ffbd;
+    color: var(--textGreen);
+}
+
+.divPokemon:hover .btn-catch {
+    opacity: 1;
+}
+
+.divPokemon:hover .imgPokemon {
+    opacity: 0.5;
+}
+
+.copyright {
+    padding-top: 20px;
+    color: black !important;
+}
+
+
+/* Animasi */
+
+@keyframes pokemonAnimation {
+    0% {
+        left: -100px;
+        top: -50px;
+    }
+    25% {
+        left: 100px;
+        top: -50px;
+    }
+    50% {
+        left: 100px;
+        top: 50px;
+    }
+    75% {
+        left: -100px;
+        top: 50px;
+    }
+    100% {
+        left: -100px;
+        top: -50px;
+    }
+}
+
+
+/* Move Carousel */
+
+.moveName {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 16px;
+    background-color: yellow;
+    width: 50%;
+    text-transform: capitalize;
+    font-style: oblique;
+}
+
+
+/* Alert */
+
+.error-message::before {
+    display: none;
+}
+
+.error-message i {
+    margin: 0 .4em;
+    color: #f27474;
+    font-size: 1.4em;
+}
+
+
+/* Ability */
+
+.pokemonType {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    border: 2px solid #000;
+    background-color: #0be8818f;
+    border-radius: 10px;
+    padding: 6px 20px;
+    margin: 0px 12px;
+    justify-content: center;
+    text-align: center;
+    font-style: oblique;
+}
+
+.pokemonAttribute {
+    color: #777;
+    font-weight: bold;
+    padding: 5px 25px;
+    margin: 0;
+    font-size: 0.8em;
+}
+
+
+/* Modal */
+
+.modalTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    text-decoration: underline overline dotted rgb(36, 228, 36);
+}
+
+.modal-body {
+    margin-bottom: 16px;
+}
+
+.btnAdd {
+    margin-top: 10px;
+    float: right;
+}
+
+.btnBack {
+    top: 22px;
+    left: 38px;
+    position: absolute;
+}
+
+.subtitle-modal {
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 12px;
+}
+
+.how-to-play {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 40px;
+    float: right;
+}
+
+.how-to-play:hover {
+    font-weight: 600;
+}
+
+[data-tooltip] {
+    display: inline-block;
+    position: relative;
+    cursor: help;
+    padding: 5px;
+    font-weight: 100;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 11px;
+    line-height: 1.4;
+    min-width: 250px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+[data-tooltip-position="bottom"]:before {
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+[data-tooltip-position="bottom"]:before {
+    top: 100%;
+    margin-top: 6px;
+}
+
+[data-tooltip]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    display: block;
+    z-index: 50;
+}

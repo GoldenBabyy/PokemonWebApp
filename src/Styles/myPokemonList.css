@@ -1,0 +1,92 @@
+ul {
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+ul li {
+    overflow: hidden;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+    padding: 0px;
+    justify-content: center;
+}
+
+ul li:last-child {
+    margin: 0;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px rgb(175, 175, 175);
+    background-color: rgb(175, 175, 175);
+    margin: 10px;
+    float: left;
+}
+
+.myPokemon {
+    display: inline-block;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+span.name {
+    display: flex;
+    margin: 0;
+    padding-left: 10px;
+    font-weight: normal;
+    font-style: italic;
+    color: #999;
+}
+
+span.nickname {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.delete {
+    margin: 0;
+    float: right;
+    padding: 20px 12px 20px 16px;
+    cursor: pointer;
+    margin-right: 24px;
+}
+
+.close:hover {
+    color: red;
+    font-size: 32px;
+}
+
+.back {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.alert {
+    display: block;
+    margin-top: 100px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.title-pokemonlist {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--textGreen);
+    margin: 8px 0px;
+    font-size: 24px;
+}
+
+.subtitle-alert {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 14px;
+    margin-bottom: 200px;
+}
