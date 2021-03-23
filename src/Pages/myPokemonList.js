@@ -12,7 +12,7 @@ export const MyPokemonList = () => {
         setMyPokemonList(data);
     }, []);
 
-    const confirm = (nicknamePokemon) => {
+    const confirm = (nicknamePokemon, id) => {
         nicknamePokemon = nicknamePokemon[0].toUpperCase() + nicknamePokemon.slice(1);
         swal({
             title: "Are you sure?",
@@ -23,7 +23,7 @@ export const MyPokemonList = () => {
         })
         .then((willRelease) => {
         if (willRelease) {
-            release(nicknamePokemon);
+            release(nicknamePokemon, id);
             swal("Poof! Your pokemon named " + nicknamePokemon + " has been released!", {
             icon: "success",
             });
@@ -33,17 +33,16 @@ export const MyPokemonList = () => {
         });
     }
 
-    const release = (nicknamePokemon) => {
+    const release = (nicknamePokemon, id) => {
         var temp = cloneDeep(myPokemonList);
-        temp.map((myPokemon, id) => {
-            let index = myPokemon.nickName.findIndex(nickname => nickname === nicknamePokemon.toLowerCase())
-            if(index > -1){
-                myPokemon.nickName.splice(index, 1);
-            }
-            if(myPokemon.nickName.length === 0){
-                temp.splice(id, 1);
-            }
-        })
+        let pokemonId = temp.findIndex(myPokemonId => id === myPokemonId.id)
+        let nicknameId = temp[pokemonId].nickName.findIndex(myPokemonNickname => nicknamePokemon.toLowerCase() === myPokemonNickname)
+        temp[pokemonId].nickName.splice(nicknameId, 1);
+
+        if(temp[pokemonId].nickName.length === 0){
+            temp.splice(pokemonId, 1);
+        }
+
         localStorage.setItem('myPokemon', JSON.stringify(temp));
         setMyPokemonList(temp);
     };
@@ -72,7 +71,7 @@ export const MyPokemonList = () => {
                                                 <span className="name">{myPokemon.name}</span>
                                             </span>
                                             <span className="delete">
-                                                <button type="button" className="close" aria-label="Close" onClick={() => confirm(nickname)}>
+                                                <button type="button" className="close" aria-label="Close" onClick={() => confirm(nickname, myPokemon.id)}>
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </span>

@@ -29,12 +29,10 @@ export const PokemonModal = (props) => {
                         if(myPokemon.id === props.id){
                             myPokemon.nickName.forEach((pokemonNickname, index) => {
                                 if(pokemonNickname === nickname.toLowerCase()){
-                                    console.log('nickname sama');
                                     validData = false;
                                     throw BreakException;
                                 }else{
                                     diffData=false;
-                                    console.log('nickname beda');
                                 }
                             });
                         }

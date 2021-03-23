@@ -1,5 +1,5 @@
 .nav-bar {
-    background-color: #22BB33;
+    background-color: var(--textGreen);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
