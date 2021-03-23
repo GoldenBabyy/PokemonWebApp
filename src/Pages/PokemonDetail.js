@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
+import swal from 'sweetalert';
 import { GetPokemonDetail } from '../GraphQL/GetPokemonDetail';
 import { MoveCarousel } from '../Components/MoveCarousel';
 import { PokemonModal } from '../Components/Modal';
-import swal from 'sweetalert';
-import '../Styles/PokemonDetail.css';
 import { Loading } from '../Components/Loading';
 import { ErrorPage } from '../Components/ErrorPage';
-
+import '../Styles/PokemonDetail.css';
 
 export const PokemonDetail = (props) => {
     const [isShow, setIsShow] = useState(false);
@@ -40,7 +39,7 @@ export const PokemonDetail = (props) => {
                 </div>
                 <div className='col-md-5'>
                     <div className='description'>
-                        <Link to='/' className='btnBack'> Back</Link>
+                        <Link to='/' className='btnBack'> &laquo;<span className="back-to-home"> Back to home</span></Link>
                         <h4 className="pokemonName">{pokemonName}</h4>
                         <p className="pokemonAttribute">Ability:</p>
                         <div className= "text-center mb-4">

@@ -23,13 +23,13 @@ export const PokemonList = () => {
             fetchPolicy: "cache-and-network"
     });
 
-    const onLoadMore = (l) => {
+    const onLoadMore = (lmt) => {
         fetchMore({
             variables: {
-                offset: l
+                offset: lmt
             }
         });
-        setLimitPokemon(l);
+        setLimitPokemon(lmt);
     }
 
     if (loading) return <Loading/>;
@@ -52,7 +52,7 @@ export const PokemonList = () => {
                         )
                     }
                     <div className="col-md-12">
-                        <button className="btn btn-success loadmore" onClick={() => onLoadMore(limitPokemon+9)}> Load More </button>
+                        <button className="btn btn-success loadmore" onClick={() => onLoadMore(limitPokemon+9)}> Load More... </button>
                     </div>
                 </div>
             </div>

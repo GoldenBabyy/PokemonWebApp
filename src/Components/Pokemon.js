@@ -6,9 +6,9 @@ export const Pokemon = ({pokemonData, myPokemonList}) => {
         var nicknameLength = myPokemonList.find(myPokemon => myPokemon.name === pokemonData.name) 
         return(
             nicknameLength ? (
-                <h6 className="ownedPokemon">You already have {nicknameLength.nickName.length} Pokémon</h6>
+                <h6 className="ownedPokemon">You already have <b>{nicknameLength.nickName.length}</b> Pokémon</h6>
             ):(
-                <h6 className="ownedPokemon">You already have 0 Pokémon</h6>
+                <h6 className="ownedPokemon">You already have <b>0</b> Pokémon</h6>
             )
         )
     }

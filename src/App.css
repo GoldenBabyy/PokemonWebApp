@@ -1,5 +1,4 @@
 :root {
-    /* --backgroundPrimary: rgb(245, 255, 245); */
     --backgroundPrimary: #FDFAF5;
     --backgroundSecondary: rgb(232, 247, 221);
     --title: #FFFFFF;
@@ -26,7 +25,6 @@ body {
 }
 
 .container-fluid {
-    /* background-color: #FFFFF0; */
     background-color: var(--backgroundPrimary);
     background-size: cover;
     min-height: 100vh;

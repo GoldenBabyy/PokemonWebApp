@@ -170,6 +170,17 @@
     top: 22px;
     left: 38px;
     position: absolute;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .btnBack>span {
+        display: none;
+    }
+    .btnBack {
+        font-size: 24px;
+        top: 14px;
+    }
 }
 
 .subtitle-modal {
@@ -221,11 +232,11 @@
 }
 
 [data-tooltip]:after {
-    content: '';
     display: none;
     position: absolute;
     width: 0;
     height: 0;
+    margin-top: 150px;
     border-color: transparent;
     border-style: solid;
 }
